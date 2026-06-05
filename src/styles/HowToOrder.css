@@ -1,0 +1,66 @@
+/* src/styles/HowToOrder.css */
+
+.order-section {
+  background: var(--cream);
+  padding: 5.5rem 5rem;
+  text-align: center;
+}
+.order-section .section-tag { justify-content: center; }
+.order-section .section-h2 { text-align: center; }
+.order-section .section-sub { text-align: center; margin: 0 auto 0; }
+
+.ord-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+.o-step { text-align: center; position: relative; }
+.o-step:not(:last-child)::after {
+  content: '→';
+  position: absolute;
+  right: -1rem;
+  top: 1.5rem;
+  font-size: 1.1rem;
+  color: rgba(26, 15, 10, 0.2);
+}
+.o-num {
+  width: 52px;
+  height: 52px;
+  background: var(--spice);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 0 auto 1rem;
+}
+.o-title {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+.o-desc { font-size: 0.82rem; color: var(--muted); line-height: 1.55; }
+
+.ord-ctas {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 3rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 900px) {
+  .order-section { padding: 3.5rem 1.5rem; }
+  .ord-steps { grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+  .o-step:not(:last-child)::after { display: none; }
+  .ord-ctas { flex-direction: column; align-items: stretch; padding: 0 1rem; }
+  .ord-ctas a { justify-content: center; }
+}
+@media (max-width: 500px) {
+  .ord-steps { grid-template-columns: 1fr; }
+}

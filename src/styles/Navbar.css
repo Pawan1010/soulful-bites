@@ -1,0 +1,119 @@
+/* src/styles/Navbar.css */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 200;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 4rem;
+  background: rgba(250, 246, 239, 0.95);
+  backdrop-filter: blur(14px);
+  border-bottom: 0.5px solid var(--border);
+}
+
+.nav-logo {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--brown);
+  text-decoration: none;
+  letter-spacing: -0.02em;
+}
+.nav-logo span { color: var(--spice); }
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  align-items: center;
+}
+.nav-links a {
+  font-size: 0.82rem;
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--muted);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--spice); }
+.nav-links .nav-cta {
+  background: var(--spice);
+  color: #fff !important;
+  padding: 0.55rem 1.3rem;
+  border-radius: var(--radius-pill);
+}
+.nav-links .nav-cta:hover { background: var(--spice2); color: #fff !important; }
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 4px;
+  background: none;
+  border: none;
+}
+.hamburger span {
+  width: 24px;
+  height: 2px;
+  background: var(--brown);
+  border-radius: 2px;
+  transition: all 0.3s;
+  display: block;
+}
+
+/* Mobile Menu */
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 65px;
+  left: 0;
+  right: 0;
+  background: rgba(250, 246, 239, 0.98);
+  backdrop-filter: blur(20px);
+  padding: 1.5rem 2rem;
+  z-index: 199;
+  border-bottom: 0.5px solid var(--border);
+  flex-direction: column;
+  gap: 1.2rem;
+}
+.mobile-menu.open { display: flex; }
+.mobile-menu a {
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--brown);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.5rem 0;
+  border-bottom: 0.5px solid var(--border);
+}
+.mobile-menu-wa {
+  background: #25D366;
+  color: #fff !important;
+  text-align: center;
+  border-radius: var(--radius-pill);
+  padding: 0.8rem !important;
+  border: none !important;
+}
+.mobile-menu-call {
+  background: var(--brown);
+  color: #fff !important;
+  text-align: center;
+  border-radius: var(--radius-pill);
+  padding: 0.8rem !important;
+  border: none !important;
+  margin-top: -0.3rem;
+}
+
+@media (max-width: 900px) {
+  .navbar { padding: 1rem 1.5rem; }
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+}

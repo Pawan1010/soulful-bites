@@ -1,0 +1,25 @@
+/* src/styles/Ticker.css */
+
+.ticker {
+  background: var(--brown);
+  color: var(--gold);
+  padding: 0.8rem 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.ticker-inner {
+  display: inline-block;
+  animation: tick 32s linear infinite;
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-size: 1rem;
+  letter-spacing: 0.03em;
+}
+.ticker-inner span {
+  margin: 0 2rem;
+  opacity: 0.7;
+}
+@keyframes tick {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}

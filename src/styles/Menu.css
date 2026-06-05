@@ -1,0 +1,102 @@
+/* src/styles/Menu.css */
+
+.menu-section {
+  background: var(--warm);
+  padding: 5.5rem 5rem;
+}
+.menu-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+}
+
+/* Card */
+.m-card {
+  background: #fff;
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+}
+.m-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-card);
+}
+.m-card.featured { grid-column: span 2; }
+
+.m-img { overflow: hidden; position: relative; }
+.m-img img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  transition: transform 0.5s;
+  display: block;
+}
+.m-card.featured .m-img img { height: 320px; }
+.m-card:hover .m-img img { transform: scale(1.06); }
+
+.m-badge {
+  position: absolute;
+  top: 0.8rem;
+  left: 0.8rem;
+  background: var(--spice);
+  color: #fff;
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-pill);
+}
+
+.m-info { padding: 1.1rem 1.3rem 1.3rem; }
+.m-name {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+.m-desc {
+  font-size: 0.83rem;
+  color: var(--muted);
+  line-height: 1.5;
+  margin-bottom: 0.75rem;
+}
+.m-foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.m-price {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--spice);
+}
+.m-order {
+  font-size: 0.76rem;
+  font-weight: 500;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.m-order:hover { color: var(--spice); }
+
+@media (max-width: 900px) {
+  .menu-section { padding: 3.5rem 1.5rem; }
+  .menu-head { flex-direction: column; align-items: flex-start; }
+  .menu-grid { grid-template-columns: 1fr; gap: 1rem; }
+  .m-card.featured { grid-column: span 1; }
+  .m-card.featured .m-img img { height: 240px; }
+}
